@@ -80,11 +80,39 @@
   }
 }
 
+/* Make dropdown menus have a white background and visible border */
+[data-radix-popper-content-wrapper] .radix-select-content,
+[data-radix-popper-content-wrapper] .radix-select-viewport,
+[data-radix-popper-content-wrapper] .radix-select-content > div,
+[data-radix-popper-content-wrapper] .radix-select-viewport > div,
+[data-radix-popper-content-wrapper] .radix-select-content,
+[data-radix-popper-content-wrapper] .radix-select-viewport,
+[data-radix-popper-content-wrapper] .bg-popover,
+[data-radix-popper-content-wrapper] .bg-white {
+  background: #fff !important;
+  border: 1px solid #e5e7eb !important; /* Tailwind gray-200 */
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.08);
+  color: #222 !important;
+}
+
+/* Ensure dropdown items are also visible */
+[data-radix-popper-content-wrapper] .radix-select-item,
+[data-radix-popper-content-wrapper] .radix-select-item > div {
+  background: #fff !important;
+  color: #222 !important;
+}
+
+/* Optional: Remove transparency from all popover/dropdown content */
+[data-radix-popper-content-wrapper] * {
+  backdrop-filter: none !important;
+  background-color: #fff !important;
+}
+
 @layer base {
   * {
     @apply border-border;
   }
-  body {
-    @apply bg-background text-foreground;
+    body {
+      @apply bg-background text-foreground;
+    }
   }
-}
